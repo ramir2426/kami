@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @salesman.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @salesman.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @salesman.phone %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @salesman.gender %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @salesman.age %>
+</p>
+
+<p>
+  <strong>Qualification:</strong>
+  <%= @salesman.qualification %>
+</p>
+
+<p>
+  <strong>Work experience:</strong>
+  <%= @salesman.work_experience %>
+</p>
+
+<p>
+  <strong>Cv:</strong>
+  <%= @salesman.cv %>
+</p>
+
+<p>
+  <strong>Job type:</strong>
+  <%= @salesman.job_type %>
+</p>
+
+<%= link_to 'Edit', edit_salesman_path(@salesman) %> |
+<%= link_to 'Back', salesmen_path %>

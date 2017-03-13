@@ -1,0 +1,73 @@
+<%= form_for(salesman) do |f| %>
+  <% if salesman.errors.any? %>
+    <div id="">
+      <h2><%= pluralize(salesman.errors.count, "error") %> prohibited this salesman from being saved:</h2>
+
+      <ul>
+      <% salesman.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %>
+    <!-- <select>
+      <option value="" disabled selected>choose</option>
+      <option value="0">Male</option>\
+      <option value="1">Female</option>
+    </select> -->
+    <%= f.select :gender, options_for_select([['Male', 'male'], ['Female', 'female']]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %>
+    <%= f.number_field :age, min: 15 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :qualification %>
+    <%= f.text_field :qualification %>
+  </div>
+
+  <div class="field">
+    <%= f.label :work_experience %>
+    <%= f.text_field :work_experience %>
+  </div>
+
+  <div class="field">
+    <%= f.label :job_type %>
+    <%= f.number_field :job_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cv %>
+    <%= f.file_field :cv %>
+  </div>
+
+  <div class="btn waves-effect waves-light">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('select').material_select();
+  });
+</script>

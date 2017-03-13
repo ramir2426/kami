@@ -1,0 +1,83 @@
+<%= form_for(rider) do |f| %>
+  <% if rider.errors.any? %>
+    <div id="">
+      <h2><%= pluralize(rider.errors.count, "error") %> prohibited this rider from being saved:</h2>
+
+      <ul>
+      <% rider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %>
+    <%= f.select :gender, options_for_select([['Male', 'male'], ['Female', 'female']]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %>
+    <%= f.number_field :age, min: 15 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :qualification %>
+    <%= f.text_field :qualification %>
+  </div>
+
+  <div class="field">
+    <%= f.label :work_experience %>
+    <%= f.text_field :work_experience %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ice_number %>
+    <%= f.text_field :ice_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cnic %>
+    <%= f.file_field :cnic %>
+  </div>
+
+  <div class="field file-path-wrapper">
+    <%= f.label :driving_license %>
+    <%= f.file_field :driving_license, class: "file-path validate" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reg_copy %>
+    <%= f.file_field :reg_copy %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cv %>
+    <%= f.file_field :cv %>
+  </div>
+
+  <div class="btn waves-effect waves-light">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('select').material_select();
+  });
+</script>
